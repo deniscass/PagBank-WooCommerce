@@ -30,14 +30,12 @@ class SubscriptionList extends WP_List_Table
             'id'                 => __('ID', 'rm-pagbank'),
             'initial_order_id'   => __('Pedido Inicial', 'rm-pagbank'),
             'view'                 => __('Visualizar', 'rm-pagbank'),
-            'recurring_amount'   => __('Valor Recor.', 'rm-pagbank'),
+            'recurring_amount'   => __('Valor Recorrente', 'rm-pagbank'),
             'status'             => __('Status', 'rm-pagbank'),
-            'recurring_type'     => __('Tipo Recor.', 'rm-pagbank'),
+            'recurring_type'     => __('Tipo Recorrente', 'rm-pagbank'),
             'created_at'         => __('Criado em', 'rm-pagbank'),
             'updated_at'         => __('Atualizado em', 'rm-pagbank'),
             'next_bill_at'       => __('Próxima Cobrança', 'rm-pagbank'),
-            'billing_name'       => __('Cliente', 'rm-pagbank'),
-            'billing_email'       => __('Email', 'rm-pagbank'),
         ];
     }
 
@@ -145,8 +143,6 @@ class SubscriptionList extends WP_List_Table
             'created_at' => array('created_at', false),
             'updated_at' => array('updated_at', false),
             'next_bill_at' => array('next_bill_at', false),
-            'billing_name' => array('billing_name', false),
-            'billing_email' => array('billing_email', false),
         );
     }
     
