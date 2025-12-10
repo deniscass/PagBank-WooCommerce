@@ -95,10 +95,20 @@ class SubscriptionDetails extends WP_List_Table
         $status = $recHelper->getFriendlyStatus($this->subscription->status);
         $type = $recHelper->translateFrequency($this->subscription->recurring_type);
 
+
+        $clientData = "";
+        $initialOrder = wc_get_order($this->subscription->initial_order_id);
+        if ($initialOrder) {
+           $clientName = $initialOrder->get_billing_first_name() . ' ' . $initialOrder->get_billing_last_name();
+           $clientEmail = $initialOrder->get_billing_email();
+           $clientData = $clientName . ' (' . $clientEmail . ')';
+        }
+
         $this->items = [
             ['name' => 'ID', 'value' => $this->subscription->id],
             ['name' => 'Pedido Inicial', 'value' => $this->subscription->initial_order_id],
             ['name' => 'Valor Recorrente', 'value' => $this->subscription->recurring_amount],
+            ['name' => 'Cliente', 'value' => $clientData],
             ['name' => 'Status', 'value' => $status]
         ];
 
