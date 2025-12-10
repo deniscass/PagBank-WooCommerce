@@ -230,7 +230,6 @@ SVG;
         $subscriptionDetailsListTable->display();
 
 
-        echo '<h2>' . esc_html( __('Ações', 'pagbank-connect') ). '</h2>';
         do_action( 'rm_pagbank_view_subscription_actions', $subscription );
 
         echo '<h2>' . esc_html( __('Pedidos Associados', 'pagbank-connect') ) . '</h2>';
